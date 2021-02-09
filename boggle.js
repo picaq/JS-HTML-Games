@@ -4,10 +4,12 @@ window.onload = initialize;
 
 function initialize() { // loads these functions on page load
     rollDice();
+    select();
 }
 
 // array of all td elements in order
-let tdArray = document.getElementsByTagName("TD");  
+let tdArray = document.getElementsByTagName("TD");
+// let buttons = document.querySelectorAll(".board td"); // static
 
 function rollDice() {
     let dice = [
@@ -41,3 +43,19 @@ function rollDice() {
         tdArray[i].innerHTML = randomDice[i][random];
     }
 }
+
+// listen for click
+
+for ( let i = 0 ; i < 16 ; i++ ) {     // need function(){} to prevent immediate firing of select() onload.
+    tdArray[i].addEventListener("click", function(){select(tdArray[i])}, false);
+}
+
+function select(td) {
+    if (td.className === "" || td.className === null ) {
+        td.className = "selected";
+    } else {
+        td.className = "";
+    }
+}
+
+// create word
