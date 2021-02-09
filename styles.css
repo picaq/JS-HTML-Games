@@ -9,12 +9,13 @@ table {
 
 .board {
     /* margin-top: calc(50vh - 10rem); */
-    margin-top: calc(36vh - 10rem);
+    /* margin-top: calc(36vh - 10rem); */
+    margin-top: 5rem;
     
     border-spacing: .45rem;
 }
 
-.board td {
+.board td, .buttons button {
     padding: .25em .325em;
     text-align: center;
 
@@ -24,6 +25,14 @@ table {
     width: 3em;
     height: 3em;
     font-size: 1.5rem;
+}
+
+.buttons button {
+    color: #ddd;
+    font-size: 1.25rem;
+    width: auto;
+    margin: .5rem;
+    padding: .75rem 1.15rem;
 }
 
 .board .selected {
