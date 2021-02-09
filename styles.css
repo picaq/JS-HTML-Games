@@ -1,0 +1,14 @@
+html {
+    background: #171717;
+    color: #ddd;   
+}
+
+table {
+    margin: auto;
+    margin-top: calc(50vh - 5rem);
+}
+
+td {
+    padding: .5em .65em;
+    text-align: center;
+}
