@@ -4,11 +4,27 @@ html {
 }
 
 table {
-    margin: auto;
-    margin-top: calc(50vh - 5rem);
+    margin: 0 auto;
 }
 
-td {
+.board {
+    margin-top: calc(50vh - 10rem);
+}
+
+.board td {
     padding: .5em .65em;
     text-align: center;
+}
+
+.score {
+    margin-top: 2rem;
+}
+
+th {
+    text-align: right;
+}
+
+th + td {
+    text-align: left;
+    padding-left: .33em;
 }
