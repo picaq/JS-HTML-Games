@@ -9,11 +9,25 @@ table {
 
 .board {
     margin-top: calc(50vh - 10rem);
+    
+    border-spacing: .45rem;
 }
 
 .board td {
-    padding: .5em .65em;
+    padding: .25em .325em;
     text-align: center;
+
+    border: 1px solid #aaa;
+    background: #222;
+    border-radius: .45rem;
+    width: 3em;
+    height: 3em;
+    font-size: 1.5rem;
+}
+
+.selected {
+    border-color: darkred;
+    color: darkred;
 }
 
 .score {
@@ -28,3 +42,4 @@ th + td {
     text-align: left;
     padding-left: .33em;
 }
+
