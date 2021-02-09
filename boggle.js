@@ -98,6 +98,9 @@ let points = document.getElementById("points");
 
 function printWord() {
     let displayWord = letterArr.join('');
+    if ( displayWord.length > letterArr.length ) {  // for Qu condition
+        displayWord = displayWord.toUpperCase();
+    }
     word.innerHTML = displayWord;
     let wordLength = displayWord.length;
     length.innerHTML = wordLength;
