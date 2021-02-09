@@ -8,7 +8,9 @@
 </head>
 <body>
     <h1>Boogie Board</h1>
-    <div class="buttons flex"><button id="reset">Reset</button><button id="clear">Clear</button></div>
+    <div class="buttons flex">
+        <button id="reset" onclick="reset()">Reset</button>
+        <button id="clear" onclick="clear()">Clear</button></div>
     <table class="board">
         <tr>
             <td>0</td>
@@ -39,15 +41,15 @@
     <table class="score">
         <tr>
             <th>Word</th>
-            <td>_________</td>
+            <td id="word">_________</td>
         </tr>
         <tr>
             <th>Length</th>
-            <td>0</td>
+            <td id="length">0</td>
         </tr>
         <tr>
             <th>Points</th>
-            <td>0</td>
+            <td id="points">0</td>
         </tr>
     </table>
 

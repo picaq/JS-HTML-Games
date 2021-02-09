@@ -7,6 +7,16 @@ function initialize() { // loads these functions on page load
     select();
 }
 
+function reset() {
+    rollDice();
+    clear();
+    letterArray = [];
+    selectedDice = new Set();
+    printWord();
+    word.innerHTML = "_________";
+    
+}
+
 // array of all td elements in order
 let tdArray = document.getElementsByTagName("TD");
 // let buttons = document.querySelectorAll(".board td"); // static
@@ -50,18 +60,43 @@ for ( let i = 0 ; i < 16 ; i++ ) {     // need function(){} to prevent immediate
     tdArray[i].onclick = function(){select(tdArray[i])};
 }
 
+let selectedDice = new Set();
+let letterArr = [];
+
 function select(td) {
     if (td.className === "" || td.className === null ) {
         td.className = "selected";
-    } else {
+        selectedDice.add(td);
+        letterArr.push(td.innerHTML);
+    } else
+    if (td.className === "selected" ) {
+        td.className = "";
+        selectedDice.delete(td);
+        letterArr.pop(td.innerHTML);
+    }
+    printWord();
+}
+
+let word = document.getElementById("word");
+
+function printWord() {
+    word.innerHTML = [letterArr.join('')];
+}
+
+document.getElementById("#clear").onclick = clear();
+
+function clear() {
+    // for ( let td of tdArray ) {
+    //     td.className = "";
+    // }
+    // for ( let i = 0 ; i < 16 ; i++ ) { 
+    //     tdArray[i].className = "";
+    // }
+    for ( let td in selectedDice ) {
         td.className = "";
     }
 }
 
-function clear() {
-    for ( let td of tdArray ) {
-        td.className = "";
-    }
-}
+
 
 // create word
