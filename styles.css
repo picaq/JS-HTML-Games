@@ -9,5 +9,6 @@ table {
 }
 
 td {
-    padding: .5em;
+    padding: .5em .65em;
+    text-align: center;
 }
