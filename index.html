@@ -12,6 +12,12 @@
         <button id="reset" onclick="reset();">Reset</button>
         <button id="clear" onclick="clearMe();">Clear</button>
     </div>
+
+    <div class="word">
+        <strong>Word</strong>
+        <span id="word">&nbsp;</span>
+    </div>
+
     <table class="board">
         <tr>
             <td data-row="0" data-column="0">0</td>
@@ -40,10 +46,6 @@
     </table>
 
     <table class="score">
-        <tr>
-            <th>Word</th>
-            <td id="word">_________</td>
-        </tr>
         <tr>
             <th>Length</th>
             <td id="length">0</td>
