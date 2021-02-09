@@ -59,12 +59,23 @@ let letterArr = []; // array of letters if selected
 let selectedDiceArr = [];
 
 function select(td) {
-    if ( td.className === "" || td.className === null ) {
-        // add logic to limit selection to mathinc row/column
-            highlight(td);
+    let lastSelectedDice = selectedDiceArr[selectedDiceArr.length-1];
+    if ( selectedDiceArr[0] === undefined ) {
+        highlight(td);
     } else
-        // must be selected AND the last selected value in order to unselect
-    if (td.className === "selected" && td === selectedDiceArr[selectedDiceArr.length-1]) {
+    if ( td.className === "" || td.className === null ) {
+        // get column and row numbers from data- attributes and parse them into integers
+        let c = parseInt( lastSelectedDice.getAttribute("data-column") );
+        let r = parseInt( lastSelectedDice.getAttribute("data-row") );
+        let tdC = parseInt( td.getAttribute("data-column") );
+        let tdR = parseInt( td.getAttribute("data-row") );
+        // add logic to limit selection to match row/column within +/- 1
+        if ( ( tdC <= c+1 && tdC >= c-1 ) && ( tdR <= r+1 && tdR >= c-r ) ) {
+            highlight(td);
+        }
+    } else
+        // must be selected AND the last selected value in order to unselect (remove highlight)
+    if (td.className === "selected" && td === lastSelectedDice) {
         td.className = "";
         // selectedDice.delete(td);
         selectedDiceArr.pop(td);
