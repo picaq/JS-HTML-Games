@@ -47,13 +47,19 @@ function rollDice() {
 // listen for click
 
 for ( let i = 0 ; i < 16 ; i++ ) {     // need function(){} to prevent immediate firing of select() onload.
-    tdArray[i].addEventListener("click", function(){select(tdArray[i])}, false);
+    tdArray[i].onclick = function(){select(tdArray[i])};
 }
 
 function select(td) {
     if (td.className === "" || td.className === null ) {
         td.className = "selected";
     } else {
+        td.className = "";
+    }
+}
+
+function clear() {
+    for ( let td of tdArray ) {
         td.className = "";
     }
 }
