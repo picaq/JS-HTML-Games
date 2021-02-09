@@ -53,3 +53,11 @@ th + td {
     padding-left: .33em;
 }
 
+.valid {
+    color: seagreen;
+}
+
+.valid::after {
+    display: inline-block;
+    content: "✓";
+}
