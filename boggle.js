@@ -101,27 +101,32 @@ function printWord() {
     word.innerHTML = displayWord;
     let wordLength = displayWord.length;
     length.innerHTML = wordLength;
-    switch (wordLength) {
-        case 0:
-        case 1:
-        case 2:
-            points.innerHTML = 0;
-            break;
-        case 3:
-        case 4:
-            points.innerHTML = 1;
-            break;
-        case 5:
-            points.innerHTML = 2;
-            break;
-        case 6:
-            points.innerHTML = 3;
-            break;
-        case 7:
-            points.innerHTML = 5;
-            break;
-        default:
-            points.innerHTML =11;
+    if ( dictionarySet.has(displayWord) ) {
+        word.className = "valid";
+        switch (wordLength) {
+            case 0:
+            case 1:
+            case 2:
+                points.innerHTML = 0;
+                break;
+            case 3:
+            case 4:
+                points.innerHTML = 1;
+                break;
+            case 5:
+                points.innerHTML = 2;
+                break;
+            case 6:
+                points.innerHTML = 3;
+                break;
+            case 7:
+                points.innerHTML = 5;
+                break;
+            default:
+                points.innerHTML = 11;
+        }
+    } else {
+        points.innerHTML = 0;
     }
 }
 
