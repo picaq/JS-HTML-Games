@@ -2,9 +2,12 @@
 // https://boardgames.stackexchange.com/questions/29264/boggle-what-is-the-dice-configuration-for-boggle-in-various-languages?rq=1
 window.onload = initialize;
 
-function initialize() {
+function initialize() { // loads these functions on page load
     rollDice();
 }
+
+// array of all td elements in order
+let tdArray = document.getElementsByTagName("TD");  
 
 function rollDice() {
     let dice = [
@@ -32,7 +35,7 @@ function rollDice() {
         randomDice.push(...dice.splice(random, 1));
     }
 
-    let tdArray = document.getElementsByTagName("TD");  // adds letters into td
+    // adds letters into td
     for ( let i = 0 ; i < 16 ; i++ ) {
         let random = Math.floor( Math.random() * 6 );
         tdArray[i].innerHTML = randomDice[i][random];
