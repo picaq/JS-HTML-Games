@@ -10,10 +10,7 @@ function initialize() { // loads these functions on page load
 function reset() {
     rollDice();
     clear();
-    letterArray = [];
-    selectedDice = new Set();
-    printWord();
-    word.innerHTML = "_________";
+
     
 }
 
@@ -60,18 +57,22 @@ for ( let i = 0 ; i < 16 ; i++ ) {     // need function(){} to prevent immediate
     tdArray[i].onclick = function(){select(tdArray[i])};
 }
 
-let selectedDice = new Set();
-let letterArr = [];
+// let selectedDice = new Set();   // set of td elements if selected
+let letterArr = []; // array of letters if selected
+let selectedDiceArr = [];
 
 function select(td) {
     if (td.className === "" || td.className === null ) {
         td.className = "selected";
-        selectedDice.add(td);
+        // selectedDice.add(td);
+        selectedDiceArr.push(td);
         letterArr.push(td.innerHTML);
     } else
-    if (td.className === "selected" ) {
+        // must be selected AND the last selected value in order to unselect
+    if (td.className === "selected" && td === selectedDiceArr[selectedDiceArr.length-1]) {
         td.className = "";
-        selectedDice.delete(td);
+        // selectedDice.delete(td);
+        selectedDiceArr.pop(td);
         letterArr.pop(td.innerHTML);
     }
     printWord();
@@ -81,20 +82,26 @@ let word = document.getElementById("word");
 
 function printWord() {
     word.innerHTML = [letterArr.join('')];
+    length.innerHTML = word.innerHTML.length;
 }
 
-document.getElementById("#clear").onclick = clear();
+// document.getElementById("#clear").onclick = function(){clear()};
 
 function clear() {
     // for ( let td of tdArray ) {
     //     td.className = "";
     // }
-    // for ( let i = 0 ; i < 16 ; i++ ) { 
-    //     tdArray[i].className = "";
-    // }
-    for ( let td in selectedDice ) {
-        td.className = "";
+    for ( let i = 0 ; i < 16 ; i++ ) { 
+        tdArray[i].className = "";
     }
+    // document.querySelectorAll(".selected") {
+
+    // }
+    letterArr = [];
+    // selectedDice = new Set();
+    selectedDiceArr = [];
+    printWord();
+    word.innerHTML = "_________";
 }
 
 
