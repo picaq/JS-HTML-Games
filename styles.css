@@ -25,9 +25,9 @@ table {
     font-size: 1.5rem;
 }
 
-.selected {
+.board .selected {
     border-color: darkred;
-    color: darkred;
+    color: rgba(255, 0, 0, 0.836);
 }
 
 .score {
