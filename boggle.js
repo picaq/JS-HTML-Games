@@ -127,6 +127,7 @@ function printWord() {
         }
     } else {
         points.innerHTML = 0;
+        word.className = "";
     }
 }
 
