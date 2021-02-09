@@ -10,8 +10,6 @@ function initialize() { // loads these functions on page load
 function reset() {
     rollDice();
     clear();
-
-    
 }
 
 // array of all td elements in order
@@ -52,7 +50,6 @@ function rollDice() {
 }
 
 // listen for click
-
 for ( let i = 0 ; i < 16 ; i++ ) {     // need function(){} to prevent immediate firing of select() onload.
     tdArray[i].onclick = function(){select(tdArray[i])};
 }
@@ -62,11 +59,9 @@ let letterArr = []; // array of letters if selected
 let selectedDiceArr = [];
 
 function select(td) {
-    if (td.className === "" || td.className === null ) {
-        td.className = "selected";
-        // selectedDice.add(td);
-        selectedDiceArr.push(td);
-        letterArr.push(td.innerHTML);
+    if ( td.className === "" || td.className === null ) {
+        // add logic to limit selection to mathinc row/column
+            highlight(td);
     } else
         // must be selected AND the last selected value in order to unselect
     if (td.className === "selected" && td === selectedDiceArr[selectedDiceArr.length-1]) {
@@ -77,6 +72,14 @@ function select(td) {
     }
     printWord();
 }
+
+function highlight(td) {
+    td.className = "selected";
+    // selectedDice.add(td);
+    selectedDiceArr.push(td);
+    letterArr.push(td.innerHTML);
+}
+
 
 let word = document.getElementById("word");
 let length = document.getElementById("length");
