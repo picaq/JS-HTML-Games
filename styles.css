@@ -7,10 +7,17 @@ table {
     margin: 0 auto;
 }
 
+body {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: .75rem;
+}
+
 .board {
     /* margin-top: calc(50vh - 10rem); */
     /* margin-top: calc(36vh - 10rem); */
-    margin-top: 5rem;
+    /* margin-top: 2rem; */
+    margin-top: 4.5rem;
     
     border-spacing: .45rem;
 }
@@ -42,6 +49,14 @@ table {
 
 .score {
     margin-top: 2rem;
+    position: fixed;
+    right: .55rem; top: 0;
+}
+
+@media only screen and ( min-width: 50rem ) {
+    .score {
+        right: calc( 50vw - 25rem ); top: 0;
+    }  
 }
 
 th {
@@ -54,10 +69,37 @@ th + td {
 }
 
 .valid {
-    color: seagreen;
+    color: lightseagreen;
 }
 
 .valid::after {
     display: inline-block;
+    position: absolute;
+    padding-left: .33em;
     content: "✓";
+    transform: translateY(-.1em);
+}
+
+.word {
+    margin: 0 auto;
+    /* text-align: center; */
+    margin-top: 1.5rem;
+    display: inline-block;
+    position: fixed;
+    left: calc( 50vw - 4.6rem );
+}
+
+.word strong {
+    /* display: inline-block; */
+    padding-right: .2em;
+}
+
+/* #word {
+    text-decoration: underline;
+} */
+
+#word::before {
+    content: "__________";
+    position: absolute;
+    padding-left: .03em;
 }
