@@ -8,7 +8,8 @@ table {
 }
 
 .board {
-    margin-top: calc(50vh - 10rem);
+    /* margin-top: calc(50vh - 10rem); */
+    margin-top: calc(36vh - 10rem);
     
     border-spacing: .45rem;
 }
