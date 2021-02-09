@@ -9,7 +9,7 @@ function initialize() { // loads these functions on page load
 
 function reset() {
     rollDice();
-    clear();
+    clearMe();
 }
 
 // array of all td elements in order
@@ -127,7 +127,7 @@ function printWord() {
 
 // document.getElementById("#clear").onclick = function(){clear()};
 
-function clear() {
+function clearMe() {
     // for ( let td of tdArray ) {
     //     td.className = "";
     // }
@@ -143,9 +143,4 @@ function clear() {
     printWord();
     word.innerHTML = "_________";
 }
-
-
-
-// create word
-
 
