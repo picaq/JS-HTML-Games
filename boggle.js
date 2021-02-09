@@ -79,10 +79,36 @@ function select(td) {
 }
 
 let word = document.getElementById("word");
+let length = document.getElementById("length");
+let points = document.getElementById("points");
 
 function printWord() {
-    word.innerHTML = [letterArr.join('')];
-    length.innerHTML = word.innerHTML.length;
+    let displayWord = letterArr.join('');
+    word.innerHTML = displayWord;
+    let wordLength = displayWord.length;
+    length.innerHTML = wordLength;
+    switch (wordLength) {
+        case 0:
+        case 1:
+        case 2:
+            points.innerHTML = 0;
+            break;
+        case 3:
+        case 4:
+            points.innerHTML = 1;
+            break;
+        case 5:
+            points.innerHTML = 2;
+            break;
+        case 6:
+            points.innerHTML = 3;
+            break;
+        case 7:
+            points.innerHTML = 5;
+            break;
+        default:
+            points.innerHTML =11;
+    }
 }
 
 // document.getElementById("#clear").onclick = function(){clear()};
@@ -107,3 +133,5 @@ function clear() {
 
 
 // create word
+
+
