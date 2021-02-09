@@ -60,7 +60,7 @@ let selectedDiceArr = [];
 
 function select(td) {
     let lastSelectedDice = selectedDiceArr[selectedDiceArr.length-1];
-    if ( selectedDiceArr[0] === undefined ) {
+    if ( selectedDiceArr[0] === undefined ) {   // empty array of selections, highlight anything
         highlight(td);
     } else
     if ( td.className === "" || td.className === null ) {
@@ -70,7 +70,7 @@ function select(td) {
         let tdC = parseInt( td.getAttribute("data-column") );
         let tdR = parseInt( td.getAttribute("data-row") );
         // add logic to limit selection to match row/column within +/- 1
-        if ( ( tdC <= c+1 && tdC >= c-1 ) && ( tdR <= r+1 && tdR >= c-r ) ) {
+        if ( ( tdC <= c+1 && tdC >= c-1 ) && ( tdR <= r+1 && tdR >= r-1 ) ) {
             highlight(td);
         }
     } else
