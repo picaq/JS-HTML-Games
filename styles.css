@@ -51,6 +51,7 @@ body {
     margin-top: 1rem;
     position: fixed;
     right: .55rem; top: 0;
+    z-index: -1;
 }
 
 
