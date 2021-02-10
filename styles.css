@@ -103,3 +103,17 @@ th + td {
     position: absolute;
     padding-left: .03em;
 }
+
+ul {
+    list-style: none;
+    padding-left: .5rem;
+    padding-right: .25rem;
+    margin-top: 1.75rem;
+    text-align: center;
+
+}
+
+ul li {
+    display: inline-block;
+    padding: .25em .75em;
+}
