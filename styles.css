@@ -100,6 +100,7 @@ th + td {
     content: "__________";
     position: absolute;
     padding-left: .03em;
+    letter-spacing: 0;
 }
 
 @media only screen and ( min-width: 51.5rem ) {
@@ -124,6 +125,10 @@ ul {
 ul li {
     display: inline-block;
     padding: .25em .75em;
+}
+
+ul li, #word {
+    letter-spacing: .033em;
 }
 
 .sticky {
