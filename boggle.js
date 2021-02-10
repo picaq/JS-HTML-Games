@@ -95,6 +95,7 @@ function highlight(td) {
 let word = document.getElementById("word");
 let length = document.getElementById("length");
 let points = document.getElementById("points");
+let total = document.getElementById("total");
 
 function printWord() {
     let displayWord = letterArr.join('');
