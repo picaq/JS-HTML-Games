@@ -5,11 +5,13 @@ window.onload = initialize;
 function initialize() { // loads these functions on page load
     rollDice();
     select();
+    enterButton();
 }
 
 function reset() {
     rollDice();
     clearMe();
+    clearTotals();
 }
 
 // array of all td elements in order
@@ -57,6 +59,7 @@ for ( let i = 0 ; i < 16 ; i++ ) {     // need function(){} to prevent immediate
 // let selectedDice = new Set();   // set of td elements if selected
 let letterArr = []; // array of letters if selected
 let selectedDiceArr = [];
+let submittedWords = [];
 
 function select(td) {
     let lastSelectedDice = selectedDiceArr[selectedDiceArr.length-1];
@@ -96,6 +99,7 @@ let word = document.getElementById("word");
 let length = document.getElementById("length");
 let points = document.getElementById("points");
 let total = document.getElementById("total");
+let foundWords = document.getElementById("foundWords");
 
 function printWord() {
     let displayWord = letterArr.join('');
@@ -140,6 +144,33 @@ function printWord() {
     }
 }
 
+function enterButton() {
+    document.addEventListener('keyup', (e) => {
+        switch(e.code) {
+            case "Enter":
+            case "click":
+                submitWord();
+                break;
+        }
+    });
+}
+
+function submitWord() {
+    let displayWord = word.innerHTML;
+    let submittedSet = new Set(submittedWords);
+    if ( word.className === "valid" && submittedSet.has(displayWord) === false ) {
+        let li = document.createElement("LI");
+        li.innerHTML = displayWord;
+        foundWords.appendChild(li);
+        submittedWords.push(displayWord);
+        if ( points.className === "valid" ) {
+           
+            total.innerHTML = parseInt(total.innerHTML) + parseInt(points.innerHTML);
+        }
+        clearMe();
+    }
+}
+
 // document.getElementById("#clear").onclick = function(){clear()};
 
 function clearMe() {
@@ -157,6 +188,11 @@ function clearMe() {
     selectedDiceArr = [];
     printWord();
     word.innerHTML = "&nbsp";
+}
+
+function clearTotals() {
+    total.innerHTML = 0;
+    foundWords.innerHTML = "";
 }
 
 //  keep collapsed for sanity
