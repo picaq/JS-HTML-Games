@@ -92,12 +92,6 @@ function highlight(td) {
     // selectedDice.add(td);
     selectedDiceArr.push(td);
     letterArr.push(td.innerHTML);
-    let liArr = document.getElementsByTagName("LI");
-    if ( word.innerHTML === "valid" && submittedWords.indexOf(word.innerHTML) !== -1 ) {
-        liArr[submittedWords.indexOf(word.innerHTML)].className === "selected";
-    } else {
-        liArr[submittedWords.indexOf(word.innerHTML)].className === "";
-    }
 }
 
 
@@ -199,4 +193,5 @@ function clearMe() {
 function clearTotals() {
     total.innerHTML = 0;
     foundWords.innerHTML = "";
+    submittedWords.length = 0;
 }
