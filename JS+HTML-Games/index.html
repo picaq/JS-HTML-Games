@@ -3,9 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Boggle Board</title>
+    <link rel="canonical" href="https://picaq.github.io/JS+HTML-Games"/>
+    <meta name="msapplication-TileColor" content="#171717">
+    <meta name="theme-color" content="#171717">
+
 </head>
 <body>
-    
+    <h1>Boogle Board</h1>
+    <div class="buttons flex sticky">
+        <button id="reset" onclick="reset();">Reset</button>
+        <button id="clear" onclick="clearMe();">Clear</button>
+        <button id="submitWord" onclick="submitWord();">Submit Word</button>
+    </div>
+
+    <div class="word">
+        <strong>Word</strong>
+        <span id="word">&nbsp;</span>
+    </div>
+
+    <table class="board">
+        <tr>
+            <td tabindex=0 data-row="0" data-column="0">0</td>
+            <td tabindex=0 data-row="0" data-column="1">1</td>
+            <td tabindex=0 data-row="0" data-column="2">2</td>
+            <td tabindex=0 data-row="0" data-column="3">3</td>
+        </tr>
+        <tr>
+            <td tabindex=0 data-row="1" data-column="0">4</td>
+            <td tabindex=0 data-row="1" data-column="1">5</td>
+            <td tabindex=0 data-row="1" data-column="2">6</td>
+            <td tabindex=0 data-row="1" data-column="3">7</td>
+        </tr>
+        <tr>
+            <td tabindex=0 data-row="2" data-column="0">8</td>
+            <td tabindex=0 data-row="2" data-column="1">9</td>
+            <td tabindex=0 data-row="2" data-column="2">10</td>
+            <td tabindex=0 data-row="2" data-column="3">11</td>
+        </tr>
+        <tr>
+            <td tabindex=0 data-row="3" data-column="0">12</td>
+            <td tabindex=0 data-row="3" data-column="1">13</td>
+            <td tabindex=0 data-row="3" data-column="2">14</td>
+            <td tabindex=0 data-row="3" data-column="3">15</td>
+        </tr>
+    </table>
+
+    <table class="score">
+
+        <tr>
+            <th>Total</th>
+            <td id="total">0</td>
+        </tr>
+        <tr>
+            <th>Points</th>
+            <td id="points">0</td>
+        </tr>
+        <tr>
+            <th>Length</th>
+            <td id="length">0</td>
+        </tr>
+    </table>
+
+    <ul id="foundWords">
+
+    </ul>
+
+    <script src="boggle.js"></script>
+    <script src="dictionary.js"></script>
 </body>
 </html>
