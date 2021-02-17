@@ -193,4 +193,5 @@ function clearMe() {
 function clearTotals() {
     total.innerHTML = 0;
     foundWords.innerHTML = "";
+    submittedWords.length = 0;
 }
