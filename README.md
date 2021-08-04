@@ -1,4 +1,4 @@
 # JS-HTML-Games: Boogle Board
 A word-search game
 
-Play Now!
+##[Play Now!](https://picaq.github.io/JS+HTML-Games/)
