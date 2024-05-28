@@ -14,3 +14,4 @@ A word-search game
 - [ ] turn red highlighted buttons green when a valid word can be submitted
 - [ ] SEO?
 - [ ] add info page and link back to repository
+- [ ] convert into pwa?
