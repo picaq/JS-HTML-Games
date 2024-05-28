@@ -15,3 +15,4 @@ A word-search game
 - [ ] SEO?
 - [ ] add info page and link back to repository
 - [ ] convert into pwa?
+- [ ] create a light mode and toggle
